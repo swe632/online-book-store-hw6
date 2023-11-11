@@ -1,0 +1,46 @@
+.container {
+    text-align: center;
+
+}
+
+input {
+    width: 50%;
+    text-align: center;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    margin: auto;
+    display: block;
+}
+
+button {
+    background-color: #7661ec;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+
+.pad {
+    padding-bottom: 4%;
+}
+
+
+.heading {
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 2%;
+}
+
+input.ng-invalid.ng-touched {
+    border: red 2px solid;
+}
+
+span {
+    color: red;
+    font-size: small;
+}

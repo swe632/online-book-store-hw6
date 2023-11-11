@@ -1,0 +1,106 @@
+<div class="container mt-5 padding-header">
+  <h1 class="heading">Cart</h1>
+
+
+  <div class="checkout-button mt-3" *ngIf="selectedBooks.length > 0">
+    <p class="text-danger">Selecte Items will be removed, to checkout deselect all the items!</p>
+    <button class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
+      (click)="removeAll = true" [disabled]="cart.length == 0" title="To checkout deselect all the items">
+      Remove Items from cart
+    </button>
+  </div>
+
+  <div *ngIf="showMessage" class="alert alert-success mt-3">
+    {{ message }}
+  </div>
+
+  <!-- Cart Items -->
+  <ng-container *ngIf="cart.length > 0; else noItems">
+    <div class="container mt-5 content-pad">
+      <div class="alert alert-info"> Note: Use checkboxes to select multiple items for removal. </div>
+      <div *ngFor="let book of cart" class="card mt-3" [ngClass]="{'border-danger': book.selected}">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <div class="d-flex align-items-center mt-2">
+              <div class="px-4">
+                <input type="checkbox" [(ngModel)]="book.selected" (click)="selectItem(book)">
+              </div>
+              <img src="assets/book1.jpg" alt="Book Cover" width="35%" class="img-thumbnail">
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ book.title }}</h5>
+              <p class="card-text">Author: {{ book.author }}</p>
+              <p class="card-text">Price: {{ book.price | currency}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <button class="btn btn-danger bg-danger"
+                        (click)="removeFromCart(book); $event.stopPropagation();">
+                        <strong style="font-size: 17px;">-</strong>
+                      </button>
+                      <h1 class="badge bg-light text-dark">{{ book.quantity }}</h1>
+                      <button class="btn btn-success bg-success" (click)="addToCart(book); $event.stopPropagation();">
+                        <strong style="font-size: 17px;">+</strong>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-danger bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  (click)="deleteBook = book; removeAll = false; $event.stopPropagation();">
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+<!-- Total Price -->
+<div class="d-flex justify-content-center">
+  <strong>Total Price: {{ totalPrice | currency }}</strong>
+</div>
+  <!-- Checkout Button -->
+  <div class="mt-3 d-flex d-flex justify-content-center" *ngIf="selectedBooks.length == 0">
+    <button class="btn btn-primary" (click)="checkout()" [disabled]="cart.length == 0">Checkout</button>
+  </div>
+
+  <!-- No Items Message -->
+  <ng-template #noItems>
+    <div class="container mt-5 pad">
+      <div class="text-center">
+        <strong>No items in the cart</strong>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<!-- modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Remove Item</h5>
+        <button type="button" class="btn-close" #modalClose data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" *ngIf="removeAll">
+        Are you sure, you want to remove the selected items?
+      </div>
+      <div class="modal-body" *ngIf="!removeAll">
+        Are you sure, you want to remove the item {{deleteBook.title}}?
+      </div>
+      <div *ngIf="showMessage" class="alert alert-success mt-3">
+        {{ message }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" *ngIf="removeAll" (click)="removeItemsFromCart()">Remove</button>
+        <button type="button" class="btn btn-primary" *ngIf="!removeAll" (click)="deleteFromCart()">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>

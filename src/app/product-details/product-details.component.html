@@ -1,0 +1,19 @@
+<div class="container mt-5 pad-top">
+  <div class="row">
+    <div class="col-md-4 product-image pad" style="width: 16rem;">
+      <img src="assets/book1.jpg" alt="{{ product.title }}" class="img-fluid" />
+    </div>
+    <div class="col-md-8 product-info">
+      <h2>{{ product.title }}</h2>
+      <p>Author: {{ product.author }}</p>
+      <p>Price: ${{ product.price }}</p>
+      <div *ngIf="showMessage" class="alert alert-success">
+        {{ message }}
+      </div>
+      <button (click)="addToCart(product)" class="btn btn-sm btn-primary rounded-corners">Add to Cart</button>&nbsp;
+      <button (click)="buyNow(product)" class="btn btn-sm btn-success rounded-corners">Buy Now</button> 
+    </div>
+    </div>
+  </div>
+
+<br>

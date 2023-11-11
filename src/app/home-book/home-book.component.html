@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <h1 class="heading">Book Listing</h1>
+    <div *ngIf="showMessage" class="alert alert-success">
+        {{ message }}
+    </div>
+    <div class="form-group"> 
+        <input type="text" class="form-control" placeholder="Search for a book..." [(ngModel)]="searchText" (input)="onSearchChange()">
+    </div>
+    <div *ngIf="filteredBooks.length > 0; else noResultsFound">
+    <div class="row mt-3">
+        <ng-container *ngFor="let c of filteredBooks">
+            <!-- <ng-container *ngFor="let c of books"> -->
+            <div class="col-md-2 mb-3">
+                <div class="card clickable-card" style="width: 16rem;">
+                    <img src="assets/book1.jpg" (click)="viewProductDetails(c.id)" class="card-img-top" alt="Book 1">
+                    <div class="card-body">
+                        <h5 class="card-title">{{c.title}}</h5>
+                        <p class="card-text">Author: {{c.author}}</p>
+                        <p class="card-text">Price: ${{c.price}}</p>
+                        <a class="btn btn-sm btn-primary rounded-corners" (click)="addToCart(c)">Add to Cart</a>&nbsp;
+                        <a class="btn btn-sm btn-primary rounded-corners" (click)="viewProductDetails(c.id)">Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+        </ng-container>
+    </div>
+</div>
+</div>
+<ng-template #noResultsFound> <div class="container mt-5 text-center"> <p class="alert alert-info">No Results Found</p> </div> </ng-template>

@@ -1,0 +1,16 @@
+.heading{
+    text-align: center;
+    padding-top:3%;
+    padding-bottom:4%;
+}
+
+.listing{
+    padding-bottom: 5%;
+}
+.clickable-card {
+    cursor: pointer;
+}
+
+.rounded-corners {
+    border-radius: 25px;
+}

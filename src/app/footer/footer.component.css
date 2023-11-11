@@ -1,0 +1,37 @@
+.fancy-footer {
+  background-color: #7B68EE;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.fancy-footer h3 {
+  color: #fff;
+}
+
+.social-icons li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 24px;
+}
+
+.input-group {
+  margin-top: 15px;
+}
+
+/* Add this CSS to make the footer sticky to the bottom */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding-bottom: 20px; /* To separate the content from the footer */
+}

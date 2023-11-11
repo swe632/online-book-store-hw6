@@ -1,0 +1,43 @@
+.bg-medium-slate-blue {
+  background-color: #7B68EE;
+}
+
+.navbar-brand {
+  margin-left: 10px;
+}
+
+.navbar {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nv-stick{
+  position:fixed;
+}
+
+
+.nav-item-right {
+  margin-left: 700px; 
+}
+
+
+@media (max-width: 767px) {
+  .nav-item-right {
+    margin-left: 0px; 
+  }
+}
+
+
+
+

@@ -1,0 +1,138 @@
+<div class="container mt-5 padding-header">
+  <button class="btn btn-secondary mb-3 rounded-corners" (click)="goBackToCart()"><i class="fa fa-chevron-left"></i></button>
+  <h1 class="heading">Checkout</h1>
+
+  <!-- Container to hold the cards -->
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let book of cart" class="col-md-4 mb-3">
+        <div class="card" style="width: 100%;">
+          <!-- Display item summaries here -->
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="assets/book1.jpg" alt="Book Cover" height="400%" class="img-thumbnail">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{ book.title }}</h5>
+                <p class="card-text">Author: {{ book.author }}</p>
+                <h1 class="badge bg-light text-dark">Quantity: {{ book.quantity }}</h1><br>
+                <p class="badge bg-light text-dark card-text">Price: {{ book.price * book.quantity | currency }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="mt-4">
+    <strong>Total Price: {{ totalPrice | currency }}</strong>
+  </div>
+  <div class="container mt-5">
+    <h1 class="heading">Checkout</h1>
+
+    <form [formGroup]="orderForm">
+      <div class="form-group mb-3">
+        <label for="name">Full Name *</label>
+        <input type="text" class="form-control" id="name" formControlName="name" required>
+        <div *ngIf="orderForm.get('name')?.hasError('required') && orderForm.get('name')?.touched" class="text-danger">
+          Full Name is required.
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="email">Email *</label>
+        <input type="email" class="form-control" id="email" formControlName="email" required>
+        <div *ngIf="orderForm.get('email')?.hasError('required') && orderForm.get('email')?.touched"
+          class="text-danger">
+          Email is required.
+        </div>
+        <div *ngIf="orderForm.get('email')?.hasError('email') && orderForm.get('email')?.touched" class="text-danger">
+          Please enter a valid email address.
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="phone">Phone *</label>
+        <input type="tel" class="form-control" id="phone" formControlName="phone" required>
+        <div *ngIf="orderForm.get('phone')?.hasError('required') && orderForm.get('phone')?.touched"
+          class="text-danger">
+          Phone is required.
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="address">Street Address *</label>
+        <input type="text" class="form-control" id="address" formControlName="address" required>
+        <div *ngIf="orderForm.get('address')?.hasError('required') && orderForm.get('address')?.touched"
+          class="text-danger">
+          Street Address is required.
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <div class="form-group mb-3">
+            <label for="city">City *</label>
+            <input type="text" class="form-control" id="city" formControlName="city" required>
+            <div *ngIf="orderForm.get('city')?.hasError('required') && orderForm.get('city')?.touched"
+              class="text-danger">
+              City is required.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group mb-3">
+            <label for="state">State *</label>
+            <input type="text" class="form-control" id="state" formControlName="state" required>
+            <div *ngIf="orderForm.get('state')?.hasError('required') && orderForm.get('state')?.touched"
+              class="text-danger">
+              State is required.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group mb-3">
+            <label for="zip">ZIP *</label>
+            <input type="text" class="form-control" id="zip" formControlName="zip" required>
+            <div *ngIf="orderForm.get('zip')?.hasError('required') && orderForm.get('zip')?.touched"
+              class="text-danger">
+              ZIP is required.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" type="submit" [disabled]="!orderForm.valid" data-bs-toggle="modal" data-bs-target="#exampleModal">Place Order</button>
+    </form>
+  </div>
+
+
+  <div *ngIf="showMessage && !orderForm.valid" class="alert alert-danger mt-3">
+    {{ message }}
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Place Order</h5>
+        <button type="button" class="btn-close" #modalClose data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure, you want to place the order?
+      </div>
+      <div *ngIf="showMessage && orderForm.valid" class="alert alert-success mt-3">
+        {{ message }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="placeOrder()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>

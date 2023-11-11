@@ -1,0 +1,44 @@
+<div class="container mt-5">
+    <h1 class="heading">Request a Book</h1> <br>
+    <form #myForm="ngForm" [formGroup]="reqBook" (ngSubmit)="saveBook(myForm.value)" class="pad">
+        <div class="form-group">
+            <label for="emailid">Email</label> <br>
+            <input class="form-control" type="email" formControlName="emailid" ngModel>
+            <span *ngIf="emailid && emailid.errors?.['required'] && (emailid.touched || emailid.dirty)">*Email
+                required</span>
+            <span *ngIf="emailid && emailid.errors?.['email'] && (emailid.touched || emailid.dirty)">*Email
+                Invalid</span>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="bookname">Book Name</label> <br>
+            <input class="form-control" type="text" formControlName="bookname" ngModel>
+            <span *ngIf="bookname && bookname.invalid && bookname.touched">*Invalid Book Name</span>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="author">Author</label> <br>
+            <input class="form-control" type="text" formControlName="author" ngModel>
+            <span *ngIf="author && author.errors?.['required'] && (author.touched || author.dirty)">*Author
+                required</span>
+            <span *ngIf="author && author.errors?.['pattern'] && (author.touched || author.dirty)">*Invalid
+                Author</span>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="bookedition">Book Edition</label> <br>
+            <input class="form-control" type="number" formControlName="bookedition" ngModel>
+            <span *ngIf="bookedition && bookedition.invalid && (bookedition.touched || bookedition.dirty)">*Book edition
+                required</span> <br>
+        </div>
+        <div>
+            <button [disabled]="reqBook.invalid" class="btn btn-primary" type="submit">Request Book</button>
+        </div>
+    </form>
+    <div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Book Requested!</strong> We will reach you with an update soon.
+        <button (click)="removeMessage()" type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+    </div>
+    <br>
+</div>
