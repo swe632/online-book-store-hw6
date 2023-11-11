@@ -3,6 +3,8 @@ import { Book } from "../models/book.model";
 import { CartService } from "../service/cart.service";
 import { Router } from "@angular/router";
 import { ProductService } from "../service/product.service";
+import { Observable } from "rxjs";
+import { SearchService } from "../service/search.service";
 
 @Component({
   selector: "app-home-book",
@@ -13,17 +15,24 @@ export class HomeBookComponent {
   message: string = "";
   showMessage: boolean = false;
   books: Book[] = [];
-  searchText: string = "";
   filteredBooks: Book[] = [];
   cart: Book[] = [];
+  searchResults: Observable<Book[]> | undefined;
 
   constructor(
     private cartService: CartService,
     private router: Router,
-    private productService: ProductService
+    private productService: ProductService,
+    private searchService: SearchService
   ) {}
 
   ngOnInit(): void {
+
+    //searching books
+    this.searchResults = this.searchService.searchResults;
+    this.searchResults.subscribe((results) => (this.filteredBooks = results));
+
+    //normal flow of showing books
     this.productService.getProducts().subscribe((product) => {
       this.books = product || [];
       this.filteredBooks = this.books;
@@ -35,18 +44,19 @@ export class HomeBookComponent {
   checkItemsInCart() {
     this.cart = this.cartService.getCart();
     this.filteredBooks.forEach((book: Book) => {
-      const bookInCart = this.cart.find((cartBook: Book) => {return cartBook.id == book.id});
-      if(bookInCart) {
+      const bookInCart = this.cart.find((cartBook: Book) => {
+        return cartBook.id == book.id;
+      });
+      if (bookInCart) {
         book.inCart = bookInCart.quantity;
-      } 
+      }
     });
   }
 
-  
   increaseQuantity(book: Book) {
     this.addBookToCart(book);
   }
-  
+
   addToCart(book: Book): void {
     this.addBookToCart(book);
     this.router.navigateByUrl("/cart");
@@ -57,7 +67,7 @@ export class HomeBookComponent {
     //   this.showMessage = false;
     // }, 3000);
   }
-  
+
   addBookToCart(book: Book) {
     book.inCart += 1;
     this.cartService.addToCart(book);
@@ -67,16 +77,6 @@ export class HomeBookComponent {
 
   viewProductDetails(id: number) {
     this.router.navigateByUrl("/product/" + id);
-  }
-
-  onSearchChange(): void {
-    if (this.searchText === "") {
-      this.filteredBooks = this.books;
-    } else {
-      this.filteredBooks = this.books?.filter((book) =>
-        book.title.toLowerCase().includes(this.searchText.toLowerCase())
-      );
-    }
   }
 
   removeFromCart(book: Book): void {

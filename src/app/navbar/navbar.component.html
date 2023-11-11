@@ -1,17 +1,23 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-medium-slate-blue fixed-top">
-      <a routerLink="/home" class="navbar-brand" >Online Book Store</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon "></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                  <a routerLink="/req-book" class="nav-link">Request a Book</a>
-              </li>
-              <li class="nav-item nav-item-right">
-                  <a routerLink="/cart"  class="nav-link">Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-              </li>
-          </ul>
-      </div>
+    <a routerLink="/home" class="navbar-brand">Online Book Store</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <form class="form-inline col-sm-6 px-2">
+            <div class="input-group">
+                <input type="text" placeholder="Search Online Book Store" class="form-control" id="search" [ngModelOptions]="{standalone: true}" [(ngModel)]="searchTerm" (input)="search()">
+                <span class="input-group-text"><a class="search" (click)="search()"><i class="fa fa-search" aria-hidden="true"></i></a></span>
+            </div>
+        </form>
+        <ul class="navbar-nav px-2">
+            <li class="nav-item">
+                <a routerLink="/req-book" class="nav-link">Request a Book</a>
+            </li>
+            <li class="nav-item nav-item-right">
+                <a routerLink="/cart" class="nav-link">Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+    </div>
 </nav>
