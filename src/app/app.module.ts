@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { CartService } from './service/cart.service';
+import { ProductService } from './service/product.service';
 
 
 @NgModule({
@@ -34,7 +36,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CartService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
