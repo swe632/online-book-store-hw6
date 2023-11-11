@@ -8,17 +8,28 @@
     </div>
     <div *ngIf="filteredBooks.length > 0; else noResultsFound">
     <div class="row mt-3">
-        <ng-container *ngFor="let c of filteredBooks">
+        <ng-container *ngFor="let book of filteredBooks">
             <!-- <ng-container *ngFor="let c of books"> -->
             <div class="col-md-2 mb-3">
                 <div class="card clickable-card" style="width: 16rem;">
-                    <img src="assets/book1.jpg" (click)="viewProductDetails(c.id)" class="card-img-top" alt="Book 1">
+                    <img src="assets/book1.jpg" (click)="viewProductDetails(book.id)" class="card-img-top" alt="Book 1">
                     <div class="card-body">
-                        <h5 class="card-title">{{c.title}}</h5>
-                        <p class="card-text">Author: {{c.author}}</p>
-                        <p class="card-text">Price: ${{c.price}}</p>
-                        <a class="btn btn-sm btn-primary rounded-corners" (click)="addToCart(c)">Add to Cart</a>&nbsp;
-                        <a class="btn btn-sm btn-primary rounded-corners" (click)="viewProductDetails(c.id)">Details</a>
+                        <h5 class="card-title">{{book.title}}</h5>
+                        <p class="card-text">Author: {{book.author}}</p>
+                        <p class="card-text">Price: ${{book.price}}</p>
+                        <a class="btn btn-sm btn-primary rounded-corners" (click)="addToCart(book)" *ngIf="book.inCart < 1">Add to Cart</a>
+                        <span *ngIf="book.inCart>0">
+                            <button class="btn btn-sm btn-danger bg-danger rounded-corners"
+                                (click)="removeFromCart(book); $event.stopPropagation();">
+                                <strong style="font-size: 13px;">-</strong>
+                            </button>
+                            <h1 class="badge bg-light text-dark">{{ book.inCart }}</h1>
+                            <button class="btn btn-sm btn-success bg-success rounded-corners" (click)="increaseQuantity(book); $event.stopPropagation();">
+                                <strong style="font-size: 13px;">+</strong>
+                            </button>
+                        </span>
+                        &nbsp;
+                        <a class="btn btn-sm btn-primary rounded-corners" (click)="viewProductDetails(book.id)">Details</a>
                     </div>
                 </div>
             </div>

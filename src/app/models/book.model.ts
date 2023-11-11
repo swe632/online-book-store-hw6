@@ -6,4 +6,5 @@ export interface Book {
     image: string;
     quantity: number;
     selected: boolean;
+    inCart: number;
   }

@@ -55,11 +55,13 @@ export class CartComponent {
   }
 
   addToCart(book: Book): void {
+    book.inCart += 1;
     this.cartService.addToCart(book);
     this.calculateTotalPrice();
   }
 
   removeFromCart(book: Book): void {
+    book.inCart -= 1;
     this.cartService.removeFromCart(book);
     this.cart = this.cartService.getCart(); // Update the cart data after removal
     this.calculateTotalPrice();
