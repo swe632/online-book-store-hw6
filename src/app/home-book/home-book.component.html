@@ -12,8 +12,8 @@
                         <img src="assets/book1.jpg" (click)="viewProductDetails(book.id)" class="card-img-top"
                             alt="Book 1">
                         <div class="card-body">
-                            <h5 class="card-title">{{book.title}}</h5>
-                            <p class="card-text">Author: {{book.author}}</p>
+                            <p class="card-title"><b>{{book.title}}</b></p>
+                            <p class="card-text" style="color: gray;">Author: {{book.author}}</p>
                             <p class="card-text">Price: ${{book.price}}</p>
                             <a class="btn btn-sm a-button-add rounded-corners" (click)="addToCart(book)"
                                 *ngIf="book.inCart < 1">Add to Cart</a>

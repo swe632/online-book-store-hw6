@@ -56,13 +56,18 @@ export class NavbarComponent {
 
   search() {
     this.checkItemsInCart();
-    if (this.searchTerm === "") {
+    if (this.searchTerm.trim() === "") {
       this.filteredBooks = this.books;
     } else {
+      const keywords = this.searchTerm.toLowerCase().split(/\s+/);
+  
       this.filteredBooks = this.books?.filter((book) =>
-        book.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+        keywords.every((keyword) =>
+          book.title.toLowerCase().includes(keyword)
+        )
       );
     }
     this.searchService.searchBooks(this.filteredBooks);
   }
+  
 }
