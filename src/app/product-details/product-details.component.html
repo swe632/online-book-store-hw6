@@ -25,7 +25,7 @@
       <div *ngIf="showMessage" class="alert alert-success">
         {{ message }}
       </div>
-      <a class="btn btn-sm btn-primary a-button-add rounded-corners" (click)="addToCart(product)" *ngIf="product.inCart < 1">Add to Cart</a>
+      <a class="btn btn-sm a-button-add rounded-corners" (click)="addToCart(product)" *ngIf="product.inCart < 1">Add to Cart</a>
       <span *ngIf="product.inCart>0">
           <button class="btn btn-sm btn-danger a-button-remove rounded-corners"
               (click)="removeFromCart(product); $event.stopPropagation();">
