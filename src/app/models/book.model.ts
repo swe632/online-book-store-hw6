@@ -7,4 +7,5 @@ export interface Book {
     quantity: number;
     selected: boolean;
     inCart: number;
+    description:string;
   }
