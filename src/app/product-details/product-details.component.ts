@@ -23,6 +23,7 @@ export class ProductDetailsComponent {
     quantity: 0,
     selected: false,
     inCart: 0,
+    description:"",
   };
 
   constructor(

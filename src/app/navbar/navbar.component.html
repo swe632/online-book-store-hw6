@@ -21,7 +21,8 @@
             </div>
             <div class="nav-item">
                 <li >
-                    <a routerLink="/cart" class="nav-link">Cart <i class="fa fa-shopping-cart p-" aria-hidden="true"></i></a>
+                    <a routerLink="/cart" class="nav-link">Cart <i class="fa fa-shopping-cart p-" aria-hidden="true"></i>
+                        <span *ngIf="cart.length > 0" class="badge  text-light"> {{ getTotalItemsInCart() }}</span></a>
                 </li>
             </div>
         </ul>

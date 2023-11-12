@@ -17,6 +17,11 @@
       <h2>{{ product.title }}</h2>
       <p>Author: {{ product.author }}</p>
       <p>Price: ${{ product.price }}</p>
+      <div class="mb-3">
+        <strong>Description:</strong>
+        <p>{{ product.description }}</p>
+      </div>
+  
       <div *ngIf="showMessage" class="alert alert-success">
         {{ message }}
       </div>

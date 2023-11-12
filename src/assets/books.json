@@ -6,7 +6,8 @@
     "price": 19.99,
     "image": "book1.jpg",
     "quantity": 100,
-    "inCart": 0
+    "inCart": 0,
+    "description": "The latest edition of the essential text and professional reference, Introduction to Algorithms, uniquely combines rigor and comprehensiveness. The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively self-contained and can be used as a unit of study. The algorithms are described in English and in pseudocode designed to be readable by anyone who has done a little programming. The third edition has been revised and updated throughout, featuring new chapters on van Emde Boas trees and multithreaded algorithms, substantial additions to the chapter on recurrence, and an appendix on matrices. It's a standard reference for professionals and widely used in universities worldwide."
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "price": 24.99,
     "image": "book2.jpg",
     "quantity": 100,
-    "inCart": 0
+    "inCart": 0,
+    "description": "The latest edition of the essential text and professional reference, Introduction to Algorithms, uniquely combines rigor and comprehensiveness. The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively self-contained and can be used as a unit of study. The algorithms are described in English and in pseudocode designed to be readable by anyone who has done a little programming. The third edition has been revised and updated throughout, featuring new chapters on van Emde Boas trees and multithreaded algorithms, substantial additions to the chapter on recurrence, and an appendix on matrices. It's a standard reference for professionals and widely used in universities worldwide."
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "price": 14.99,
     "image": "book3.jpg",
     "quantity": 100,
-    "inCart": 0
+    "inCart": 0,
+    "description": "The latest edition of the essential text and professional reference, Introduction to Algorithms, uniquely combines rigor and comprehensiveness. The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively self-contained and can be used as a unit of study. The algorithms are described in English and in pseudocode designed to be readable by anyone who has done a little programming. The third edition has been revised and updated throughout, featuring new chapters on van Emde Boas trees and multithreaded algorithms, substantial additions to the chapter on recurrence, and an appendix on matrices. It's a standard reference for professionals and widely used in universities worldwide."
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "price": 15.99,
     "image": "book4.jpg",
     "quantity": 100,
-    "inCart": 0
+    "inCart": 0,
+    "description": "The latest edition of the essential text and professional reference, Introduction to Algorithms, uniquely combines rigor and comprehensiveness. The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively self-contained and can be used as a unit of study. The algorithms are described in English and in pseudocode designed to be readable by anyone who has done a little programming. The third edition has been revised and updated throughout, featuring new chapters on van Emde Boas trees and multithreaded algorithms, substantial additions to the chapter on recurrence, and an appendix on matrices. It's a standard reference for professionals and widely used in universities worldwide."
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "price": 29.99,
     "image": "book5.jpg",
     "quantity": 100,
-    "inCart": 0
+    "inCart": 0,
+    "description": "The latest edition of the essential text and professional reference, Introduction to Algorithms, uniquely combines rigor and comprehensiveness. The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively self-contained and can be used as a unit of study. The algorithms are described in English and in pseudocode designed to be readable by anyone who has done a little programming. The third edition has been revised and updated throughout, featuring new chapters on van Emde Boas trees and multithreaded algorithms, substantial additions to the chapter on recurrence, and an appendix on matrices. It's a standard reference for professionals and widely used in universities worldwide."
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "price": 12.99,
     "image": "book6.jpg",
     "quantity": 100,
-    "inCart": 0
+    "inCart": 0,
+    "description": "The latest edition of the essential text and professional reference, Introduction to Algorithms, uniquely combines rigor and comprehensiveness. The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively self-contained and can be used as a unit of study. The algorithms are described in English and in pseudocode designed to be readable by anyone who has done a little programming. The third edition has been revised and updated throughout, featuring new chapters on van Emde Boas trees and multithreaded algorithms, substantial additions to the chapter on recurrence, and an appendix on matrices. It's a standard reference for professionals and widely used in universities worldwide."
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "price": 17.49,
     "image": "book7.jpg",
     "quantity": 100,
-    "inCart": 0
+    "inCart": 0,
+    "description": "The latest edition of the essential text and professional reference, Introduction to Algorithms, uniquely combines rigor and comprehensiveness. The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively self-contained and can be used as a unit of study. The algorithms are described in English and in pseudocode designed to be readable by anyone who has done a little programming. The third edition has been revised and updated throughout, featuring new chapters on van Emde Boas trees and multithreaded algorithms, substantial additions to the chapter on recurrence, and an appendix on matrices. It's a standard reference for professionals and widely used in universities worldwide."
   },
   {
     "id": 8,
@@ -69,7 +76,8 @@
     "price": 22.99,
     "image": "book8.jpg",
     "quantity": 100,
-    "inCart": 0
+    "inCart": 0,
+    "description": "The latest edition of the essential text and professional reference, Introduction to Algorithms, uniquely combines rigor and comprehensiveness. The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively self-contained and can be used as a unit of study. The algorithms are described in English and in pseudocode designed to be readable by anyone who has done a little programming. The third edition has been revised and updated throughout, featuring new chapters on van Emde Boas trees and multithreaded algorithms, substantial additions to the chapter on recurrence, and an appendix on matrices. It's a standard reference for professionals and widely used in universities worldwide."
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@
     "price": 18.99,
     "image": "book9.jpg",
     "quantity": 100,
-    "inCart": 0
+    "inCart": 0,
+    "description": "The latest edition of the essential text and professional reference, Introduction to Algorithms, uniquely combines rigor and comprehensiveness. The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively self-contained and can be used as a unit of study. The algorithms are described in English and in pseudocode designed to be readable by anyone who has done a little programming. The third edition has been revised and updated throughout, featuring new chapters on van Emde Boas trees and multithreaded algorithms, substantial additions to the chapter on recurrence, and an appendix on matrices. It's a standard reference for professionals and widely used in universities worldwide."
   },
   {
     "id": 10,
@@ -87,6 +96,7 @@
     "price": 14.99,
     "image": "book10.jpg",
     "quantity": 100,
-    "inCart": 0
+    "inCart": 0,
+    "description": "The latest edition of the essential text and professional reference, Introduction to Algorithms, uniquely combines rigor and comprehensiveness. The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively self-contained and can be used as a unit of study. The algorithms are described in English and in pseudocode designed to be readable by anyone who has done a little programming. The third edition has been revised and updated throughout, featuring new chapters on van Emde Boas trees and multithreaded algorithms, substantial additions to the chapter on recurrence, and an appendix on matrices. It's a standard reference for professionals and widely used in universities worldwide."
   }
 ]
