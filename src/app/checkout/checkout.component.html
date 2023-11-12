@@ -66,10 +66,14 @@
 
       <div class="form-group mb-3">
         <label for="phone">Phone *</label>
-        <input type="tel" class="form-control" id="phone" formControlName="phone" required>
+        <input type="tel" class="form-control" id="phone" formControlName="phone" pattern="[\d-]*" required>
         <div *ngIf="orderForm.get('phone')?.hasError('required') && orderForm.get('phone')?.touched"
           class="text-danger">
           Phone is required.
+        </div>
+        <div *ngIf="orderForm.get('phone')?.hasError('pattern') && orderForm.get('phone')?.touched"
+          class="text-danger">
+          Invalid Phone.
         </div>
       </div>
 
@@ -106,7 +110,7 @@
         <div class="col-md-4">
           <div class="form-group mb-3">
             <label for="zip">ZIP *</label>
-            <input type="text" class="form-control" id="zip" formControlName="zip" required>
+            <input type="number" class="form-control" id="zip" formControlName="zip" required>
             <div *ngIf="orderForm.get('zip')?.hasError('required') && orderForm.get('zip')?.touched"
               class="text-danger">
               ZIP is required.
