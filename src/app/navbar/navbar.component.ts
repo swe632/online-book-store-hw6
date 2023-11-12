@@ -50,6 +50,10 @@ export class NavbarComponent {
     });
   }
 
+  getTotalItemsInCart(): number {
+    return this.cart.reduce((total, book) => total + book.inCart, 0);
+  }
+
   search() {
     this.checkItemsInCart();
     if (this.searchTerm === "") {
