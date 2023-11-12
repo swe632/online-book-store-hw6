@@ -15,7 +15,7 @@
 
   <div class="checkout-button mt-3" *ngIf="selectedBooks.length > 0">
     <p class="text-danger">Selecte Items will be removed, to checkout deselect the items!</p>
-    <button class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
+    <button class="btn a-button-remove" data-bs-toggle="modal" data-bs-target="#exampleModal"
       (click)="removeAll = true" [disabled]="cart.length == 0" title="To checkout deselect all the items">
       Remove Items from cart
     </button>
@@ -48,18 +48,18 @@
                 <div class="btn-group">
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <button class="btn btn-danger bg-danger"
+                      <button class="btn a-button-remove"
                         (click)="removeFromCart(book); $event.stopPropagation();">
                         <strong style="font-size: 17px;">-</strong>
                       </button>
                       <h1 class="badge bg-light text-dark">{{ book.quantity }}</h1>
-                      <button class="btn btn-success bg-success" (click)="addToCart(book); $event.stopPropagation();">
+                      <button class="btn a-button-add-quantity" (click)="addToCart(book); $event.stopPropagation();">
                         <strong style="font-size: 17px;">+</strong>
                       </button>
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-danger bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                <button class="btn a-button-remove" data-bs-toggle="modal" data-bs-target="#exampleModal"
                   (click)="deleteBook = book; removeAll = false; $event.stopPropagation();">
                   <i class="fa fa-trash-o" aria-hidden="true"></i>
                 </button>
@@ -77,7 +77,7 @@
 </div>
   <!-- Checkout Button -->
   <div class="mt-3 d-flex d-flex justify-content-center" *ngIf="selectedBooks.length == 0">
-    <button class="btn btn-primary" (click)="checkout()" [disabled]="cart.length == 0">Checkout</button>
+    <button class="btn a-button-add" (click)="checkout()" [disabled]="cart.length == 0">Proceed to Checkout</button>
   </div>
 
   <!-- No Items Message -->
@@ -108,9 +108,9 @@
         {{ message }}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" *ngIf="removeAll" (click)="removeItemsFromCart()">Remove</button>
-        <button type="button" class="btn btn-primary" *ngIf="!removeAll" (click)="deleteFromCart()">Remove</button>
+        <button type="button" class="btn btn-secondary a-button-close" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary a-button-remove" *ngIf="removeAll" (click)="removeItemsFromCart()">Remove</button>
+        <button type="button" class="btn btn-primary a-button-remove" *ngIf="!removeAll" (click)="deleteFromCart()">Remove</button>
       </div>
     </div>
   </div>

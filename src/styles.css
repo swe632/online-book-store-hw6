@@ -3,3 +3,48 @@
 .btn {
   background: #7B68EE;
 }
+
+.a-button-details {
+  background-color: #FFA41C;
+  border: #FA8900;
+  color: #000;
+}
+
+.a-button-details:hover {
+  background-color: #FA8900;
+}
+
+
+.a-button-add {
+  background-color: #F7CA00;
+  border: #F7CA00;
+  color: black;
+}
+
+.a-button-add:hover {
+  background-color: #F0B800;
+}
+
+.a-button-add-quantity {
+background-color: #198754;
+color: white;
+border: #198754 solid;
+}
+
+.a-button-add-quantity:hover {
+background-color: white;
+color: #198754;
+border: #198754 solid;
+}
+
+.a-button-remove {
+background-color: red;
+color: white;
+border: red solid;
+}
+
+.a-button-remove:hover {
+color: red;
+border: red solid;
+background-color: white;
+}
